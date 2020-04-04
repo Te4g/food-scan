@@ -7,6 +7,11 @@ import Quagga from 'quagga'
 
 export default {
   name: 'Scanner',
+  data () {
+    return {
+      code: null
+    }
+  },
   mounted () {
     Quagga.init({
       inputStream: {
@@ -24,10 +29,16 @@ export default {
       }
       console.log('Init ok, ready to start')
       Quagga.start()
+      Quagga.onDetected(this.onDetected)
     })
   },
   destroyed () {
     Quagga.stop()
+  },
+  methods: {
+    onDetected (result) {
+      this.code = result.codeResult.code
+    }
   }
 }
 </script>
