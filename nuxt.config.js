@@ -88,5 +88,9 @@ export default {
   },
   router: {
     base: '/food-scan'
+  },
+  server: {
+    port: 8000,
+    host: '0.0.0.0'
   }
 }
