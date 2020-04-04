@@ -1,8 +1,9 @@
 <template>
   <div>
     <Scanner />
-    <v-file-input id="scanProduct" />
+    <v-file-input />
     <v-btn>click me</v-btn>
+    <div id="scanProduct"></div>
   </div>
 </template>
 
