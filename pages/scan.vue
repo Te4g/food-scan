@@ -1,19 +1,13 @@
 <template>
   <div>
-    <Scanner />
     <v-file-input />
     <v-btn>click me</v-btn>
-    <div id="scanProduct" />
+    <v-quagga></v-quagga>
   </div>
 </template>
 
 <script>
-import Scanner from '../components/Scanner'
-export default {
-  components: {
-    Scanner
-  }
-}
+export default {}
 
 </script>
 

@@ -17,7 +17,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
-    "quagga": "^0.12.1"
+    "vue-quaggajs": "^1.0.10"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
