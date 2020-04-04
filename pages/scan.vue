@@ -3,10 +3,7 @@
     <Scanner />
     <v-file-input />
     <v-btn>click me</v-btn>
-    <div v-if="code">
-      le codebar est : {{ code }}
-    </div>
-    <div id="scanProduct" />
+    <div id="scanProduct"></div>
   </div>
 </template>
 
@@ -15,11 +12,6 @@ import Scanner from '../components/Scanner'
 export default {
   components: {
     Scanner
-  },
-  data () {
-    return {
-      code: null
-    }
   }
 }
 

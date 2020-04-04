@@ -1,5 +1,7 @@
 <template>
-  <div>yo</div>
+<div>
+  <p>le code est: {{ code }} </p>
+</div>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
   name: 'Scanner',
   data () {
     return {
-      code: null
+      code: ''
     }
   },
   mounted () {
