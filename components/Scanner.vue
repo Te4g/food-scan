@@ -1,7 +1,7 @@
 <template>
-<div>
-  <p>le code est: {{ code }} </p>
-</div>
+  <div>
+    <p>le code est: {{ code }} </p>
+  </div>
 </template>
 
 <script>
@@ -32,6 +32,7 @@ export default {
       console.log('Init ok, ready to start')
       Quagga.start()
       Quagga.onDetected(this.onDetected)
+      Quagga.onProcessed(this.onProcessed)
     })
   },
   destroyed () {
@@ -40,6 +41,44 @@ export default {
   methods: {
     onDetected (result) {
       this.code = result.codeResult.code
+    },
+    onProcessed (result) {
+      const drawingCtx = Quagga.canvas.ctx.overlay
+      const drawingCanvas = Quagga.canvas.dom.overlay
+      if (result) {
+        if (result.boxes) {
+          drawingCtx.clearRect(
+            0,
+            0,
+            parseInt(drawingCanvas.getAttribute('width')),
+            parseInt(drawingCanvas.getAttribute('height'))
+          )
+          result.boxes
+            .filter(function (box) {
+              return box !== result.box
+            })
+            .forEach(function (box) {
+              Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, {
+                color: 'green',
+                lineWidth: 2
+              })
+            })
+        }
+        if (result.box) {
+          Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, {
+            color: '#00F',
+            lineWidth: 2
+          })
+        }
+        if (result.codeResult && result.codeResult.code) {
+          Quagga.ImageDebug.drawPath(
+            result.line,
+            { x: 'x', y: 'y' },
+            drawingCtx,
+            { color: 'red', lineWidth: 3 }
+          )
+        }
+      }
     }
   }
 }

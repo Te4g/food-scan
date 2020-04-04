@@ -3,7 +3,7 @@
     <Scanner />
     <v-file-input />
     <v-btn>click me</v-btn>
-    <div id="scanProduct"></div>
+    <div id="scanProduct" />
   </div>
 </template>
 
