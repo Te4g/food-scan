@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-quagga :on-detected="logIt" :reader-size="readerSize" :reader-types="['ean_reader']" />
+    <p>le code est : {{ code }}</p>
   </div>
 </template>
 
@@ -19,12 +20,14 @@ export default {
         width: 640,
         height: 480
       },
+      code: '',
       detecteds: []
     }
   },
   methods: {
     logIt (data) {
       console.log('detected', data)
+      this.code = data.codeResult.code
     }
 
   }
