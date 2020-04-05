@@ -2,8 +2,8 @@
   <v-layout>
     <v-container>
       <v-row>
-        le code : {{ code }} <br/>
-        url : {{ url }} <br/>
+        le code : {{ code }} <br>
+        url : {{ url }} <br>
         product: {{ product }}
       </v-row>
       <v-row v-if="detected">
@@ -97,7 +97,7 @@ export default {
     logIt (data) {
       console.log('detected', data)
       this.code = data.codeResult.code
-      this.product = this.$axios.$get(`${this.url}${this.code}.json`)
+      this.$axios.$get(`${this.url}${this.code}.json`).then((product) => { this.product = product })
       this.detected = true
       VueQuagga.stop()
     },
