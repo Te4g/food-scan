@@ -1,11 +1,6 @@
 <template>
   <v-layout>
     <v-container>
-      <v-row>
-        le code : {{ code }} <br>
-        url : {{ url }} <br>
-        product: {{ product }}
-      </v-row>
       <v-row v-if="detected">
         <v-card
           class="mx-auto"
@@ -64,7 +59,7 @@
           </v-expand-transition>
         </v-card>
       </v-row>
-      <v-row>
+      <v-row v-else>
         <v-quagga :on-detected="logIt" :reader-size="readerSize" :reader-types="['ean_reader']" />
       </v-row>
     </v-container>
@@ -102,7 +97,7 @@ export default {
       VueQuagga.stop()
     },
     activateScan () {
-      VueQuagga.start()
+      this.detected = false
     }
 
   }
