@@ -48,11 +48,21 @@
 
               <v-card-text>
                 <v-list-item>
-                  <v-list-item-content>Kcal/100g : {{ product.product.nutriments.energy_100g }}</v-list-item-content>
-                  <v-list-item-content>Quantity package : {{ product.product.quantity }}</v-list-item-content>
-                  <v-list-item-content>Kcal package : {{ Math.round(product.product.nutriments.energy_100g * product.product.quantity / 100) }}</v-list-item-content>
-                  <v-list-item-content>Sugar/100g : {{ product.product.nutriments.sugars_100g }}</v-list-item-content>
-                  <v-list-item-content>Sodium/100g : {{ product.product.nutriments.sodium_100g }}</v-list-item-content>
+                  <v-row>
+                    <v-list-item-content>Kcal/100g : {{ product.product.nutriments.energy_100g }}</v-list-item-content>
+                  </v-row>
+                  <v-row>
+                    <v-list-item-content>Quantity package : {{ product.product.quantity }}</v-list-item-content>
+                  </v-row>
+                  <v-row>
+                    <v-list-item-content>Kcal package : {{ Math.round(product.product.nutriments.energy_100g * product.product.quantity / 100) }}</v-list-item-content>
+                  </v-row>
+                  <v-row>
+                    <v-list-item-content>Sugar/100g : {{ product.product.nutriments.sugars_100g }}</v-list-item-content>
+                  </v-row>
+                  <v-row>
+                    <v-list-item-content>Sodium/100g : {{ product.product.nutriments.sodium_100g }}</v-list-item-content>
+                  </v-row>
                 </v-list-item>
               </v-card-text>
             </div>
