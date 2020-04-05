@@ -1,11 +1,12 @@
 <template>
   <div>
     <v-col>
-      <v-quagga :on-detected="logIt" :reader-size="readerSize" :reader-types="['ean_reader']" />
-    </v-col>
-    <v-col>
       <p>le code est : {{ code }}</p>
     </v-col>
+    <v-col>
+      <v-quagga :on-detected="logIt" :reader-size="readerSize" :reader-types="['ean_reader']" />
+    </v-col>
+
   </div>
 </template>
 
