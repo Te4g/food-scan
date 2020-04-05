@@ -1,6 +1,11 @@
 <template>
   <v-layout>
     <v-container>
+      <v-row>
+        le code : {{ code }} <br/>
+        url : {{ url }} <br/>
+        product: {{ product }}
+      </v-row>
       <v-row v-if="detected">
         <v-card
           class="mx-auto"
