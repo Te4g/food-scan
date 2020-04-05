@@ -54,7 +54,7 @@
                   <v-list-item-content>Quantity package : {{ product.product.quantity }}</v-list-item-content>
                 </v-list-item>
                 <v-list-item>
-                  <v-list-item-content>Kcal package : {{ product.product.nutriments.energy_100g * product.product.quantity / 100 }}</v-list-item-content>
+                  <v-list-item-content>Kcal package : {{ product.product.nutriments.energy_100g * product.product.product_quantity / 100 }}</v-list-item-content>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-content>Sugar/100g : {{ product.product.nutriments.sugars_100g }}</v-list-item-content>
