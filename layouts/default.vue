@@ -102,9 +102,9 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-barcode-scan',
+          title: 'Scan product',
+          to: '/scan'
         }
       ],
       miniVariant: false,
